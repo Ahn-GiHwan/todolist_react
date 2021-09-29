@@ -15,8 +15,9 @@
 
 ### React
 
-- 오직 VanillaJS만을 이용하여 구성.
-- 'DOMContentLoaded'를 통해 초기 작업을 실행.
+- React Hook을 이용하여 개발
+- contextAPI와 useReducer를 조합하여 state 통합 관리
+- useMemo와 useRef를 이용하여 랜더링 최적화
 
 ### Styled-components
 
@@ -25,8 +26,8 @@
 
 ### Node.js
 
-- node 환경에서 npm을 통해 개발.
-- react, react-dom, webpack에 필요한 모든 것, sweetalert, reset-css를 다운받아 개발.
+- node 환경에서 개발.
+- npm을 통해 react, react-dom, webpack에 필요한 모든 것, sweetalert, reset-css를 다운받아 개발.
 
 ### Webpack
 
