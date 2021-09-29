@@ -2,7 +2,7 @@ import React from "react";
 
 export const initState = {
   idx: 0,
-  todos: [{ id: 123, value: "test", isCheck: false }],
+  todos: [],
   isModal: false,
   selectId: 0,
 };
