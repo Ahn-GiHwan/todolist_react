@@ -9,43 +9,25 @@
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="./todolist.png" />
 
-    <!-- fontawesome -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-      crossorigin="anonymous"
-    />
-
+    <style>
+      @font-face {
+        src: url("./KakaoOTFRegular.otf");
+        font-family: "kakao";
+      }
+      * {
+        box-sizing: border-box;
+        /* font-family: "kakao"; */
+      }
+      body {
+        font-family: "kakao";
+        background-color: skyblue;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+    </style>
     <title>TODO LIST</title>
   </head>
   <body>
-    <div class="container">
-      <main>
-        <header>
-          <i class="fas fa-th-list"></i>
-          <h1 class="title"> TODO LIST </h1>
-        </header>
-        <div class="inpuDiv">
-          <input type="text" class="inputText" placeholder="리액트 공부하기" />
-          <button class="submit btn" aria-label="submit"
-            ><i class="fas fa-plus"></i
-          ></button>
-        </div>
-        <div class="doList">
-          <ul> </ul>
-        </div>
-      </main>
-      <div class="modal">
-        <main>
-          <div class="title">수정</div>
-          <input type="text" class="modifyInput" />
-          <button class="modifySubmit btn" aria-label="modify">수정하기</button>
-          <button class="exit btn" aria-label="exit"
-            ><i class="fas fa-times"></i
-          ></button>
-        </main>
-      </div>
-    </div>
+    <div id="root"></div>
   </body>
 </html>

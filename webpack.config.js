@@ -6,7 +6,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   // 시작하는 js파일
-  entry: "./index.js",
+  entry: "./src/index.js",
 
   // 번들한 파일에 대한 설정
   output: {
@@ -15,6 +15,11 @@ module.exports = {
     // 번들할 파일 경로
     path: path.resolve(__dirname, "dist"),
   },
+
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
+
   module: {
     rules: [
       {
@@ -22,15 +27,15 @@ module.exports = {
         test: /\.s[ac]ss$/i,
 
         // 뒤에서 부터 적용
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.m?js$/,
+        test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"],
+            presets: [["@babel/preset-env"], ["@babel/preset-react"]],
           },
         },
       },
