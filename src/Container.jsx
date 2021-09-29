@@ -5,7 +5,7 @@ import StateContext, { initState, reducer } from "./State";
 
 import { Container } from "./style/style";
 
-const ContainerComponent = React.memo((props) => {
+const ContainerComponent = React.memo(() => {
   const [state, dispatch] = useReducer(reducer, initState);
 
   return (
