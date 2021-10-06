@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import StateContext from "./State";
 import validation from "./validation";
 
-const ModalCompnent = () => {
+const ModalComponent = () => {
   useEffect(() => {
     ref.current.focus();
   }, []);
@@ -53,6 +53,7 @@ const ModalCompnent = () => {
           value={value}
           onChange={(e) => setValue(e.target.value)}
           onKeyPress={(e) => e.key === "Enter" && onModifyBtn()}
+          placeholder={clickTodoValue}
         />
         <ModifySubmitBtn br="3px" onClick={onModifyBtn}>
           수정하기
@@ -65,4 +66,4 @@ const ModalCompnent = () => {
   );
 };
 
-export default ModalCompnent;
+export default ModalComponent;
