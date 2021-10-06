@@ -8,7 +8,7 @@ import swal from "sweetalert";
 import StateContext from "./State";
 import validation from "./validation";
 
-const InputBox = React.memo(() => {
+const InputBox = () => {
   useEffect(() => {
     ref.current.focus();
   }, []);
@@ -45,6 +45,6 @@ const InputBox = React.memo(() => {
       </SubmitBtn>
     </InputDiv>
   );
-});
+};
 
 export default InputBox;

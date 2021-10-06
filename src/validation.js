@@ -1,6 +1,6 @@
 export const validation = (str) => {
   if (str === "") return false;
-  if (str.replace(/ /g, "") === "") return false;
+  if (str.match(/\s/g)) return false;
   return true;
 };
 
