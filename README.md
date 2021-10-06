@@ -16,8 +16,9 @@
 ### React
 
 - React Hook을 이용하여 개발
-- contextAPI와 useReducer를 조합하여 state 통합 관리
-- useMemo와 useRef를 이용하여 랜더링 최적화
+- contextAPI와 useReducer를 사용하여 state 통합 관리
+- useRef를 통해 비제어 컴포넌트 구성
+- useEffect를 이용하여 life cycle 제어
 
 ### Styled-components
 
@@ -73,3 +74,8 @@
 
 <br>
 <hr>
+
+## v3.0.1
+
+- 수정 시 호출되는 모달창의 input placeholder값을 기존 todo값이 나오도록 수정
+- 미사용 hook 제거
