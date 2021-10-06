@@ -20,7 +20,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import StateContext from "./State";
 
-function Todo({ id, value, isCheck }) {
+const Todo = ({ id, value, isCheck }) => {
   const context = useContext(StateContext);
 
   const { dispatch } = context;
@@ -66,6 +66,6 @@ function Todo({ id, value, isCheck }) {
       </Right>
     </Do>
   );
-}
+};
 
 export default Todo;
