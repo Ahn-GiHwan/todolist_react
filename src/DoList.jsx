@@ -1,4 +1,5 @@
-import React, { useCallback, useContext, useEffect } from "react";
+import React, { useContext } from "react";
+import EmptyDoList from "./EmptyDoList";
 import StateContext from "./State";
 import { DoList } from "./style/style";
 import Todo from "./Todo";
@@ -6,20 +7,24 @@ import Todo from "./Todo";
 const DoListComponent = () => {
   const context = useContext(StateContext);
 
-  const { state } = context;
+  const { todos } = context.state;
 
   return (
     <DoList>
-      <ul>
-        {state.todos.map((todo) => (
-          <Todo
-            key={todo.id}
-            id={todo.id}
-            isCheck={todo.isCheck}
-            value={todo.value}
-          />
-        ))}
-      </ul>
+      {todos.length === 0 ? (
+        <EmptyDoList />
+      ) : (
+        <ul>
+          {todos.map((todo) => (
+            <Todo
+              key={todo.id}
+              id={todo.id}
+              isCheck={todo.isCheck}
+              value={todo.value}
+            />
+          ))}
+        </ul>
+      )}
     </DoList>
   );
 };
