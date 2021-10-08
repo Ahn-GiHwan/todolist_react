@@ -15,10 +15,12 @@
 
 ### React
 
-- React Hook을 이용하여 개발
-- contextAPI와 useReducer를 사용하여 state 통합 관리
-- useRef를 통해 비제어 컴포넌트 구성
-- useEffect를 이용하여 life cycle 제어
+- React Hook을 이용하여 개발.
+- contextAPI와 useReducer를 사용하여 state 통합 관리.
+- useRef를 통해 비제어 컴포넌트 구성.
+- useEffect를 이용하여 life cycle 제어.
+- React.memo를 통해 props를 비교하여 불필요한 랜더링 최소화.
+- Portals를 이용하여 modal 생성.
 
 ### Styled-components
 
@@ -37,7 +39,7 @@
 - 'MiniCssExtractPlugin'로 css파일을 생성하여 HTML에 연결.
 - 'CleanWebpackPlugin'로 bulid 시 필요없는 파일 삭제.
 - 'CopyPlugin'로 static폴더를 지정하여 이미지나 폰트 파일을 저장.
-- babel, css loader로 파일 읽기
+- babel, css loader로 파일 읽기.
 
 ### Babel
 
@@ -77,5 +79,10 @@
 
 ## v3.0.1
 
-- 수정 시 호출되는 모달창의 input placeholder값을 기존 todo값이 나오도록 수정
-- 미사용 hook 제거
+- 수정 시 호출되는 모달창의 input placeholder값을 기존 todo값이 나오도록 수정.
+- 미사용 hook 제거.
+
+## v3.0.2
+
+- React.memo를 이용하여 랜더링 최적화.
+- Portals를 이용한 Modal창 생성.

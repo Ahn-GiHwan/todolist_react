@@ -88,6 +88,7 @@ export const SubmitBtn = styled(BtnSetting)`
 // todo List div
 
 export const DoList = styled.div`
+  position: relative;
   flex: 8;
   width: 100%;
   height: fit-content;
@@ -97,11 +98,11 @@ export const DoList = styled.div`
 `;
 
 export const EmptyDoList = styled(FlexSetting)`
-  flex: 8;
-  width: 100%;
-  height: fit-content;
-  border-radius: 10px;
-  box-shadow: 0px 0px 8px 0px #6e6e6e;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 `;
 
 export const Do = styled.li`

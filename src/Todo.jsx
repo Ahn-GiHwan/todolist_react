@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
-
 import swal from "sweetalert";
-
 import {
   Do,
   Left,
@@ -11,7 +9,6 @@ import {
   EditIcon,
   DeleteIcon,
 } from "./style/style";
-
 import {
   faCheckSquare,
   faEdit,
@@ -19,11 +16,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import StateContext from "./State";
+import Portal from "./Portal";
+import ModalComponent from "./Modal";
 
 const Todo = ({ id, value, isCheck }) => {
   const context = useContext(StateContext);
 
-  const { dispatch } = context;
+  const { state, dispatch } = context;
 
   const onCheckBtn = (id) => {
     dispatch({ type: "isCheck", id });
@@ -51,20 +50,27 @@ const Todo = ({ id, value, isCheck }) => {
   };
 
   return (
-    <Do>
-      {isCheck ? <LeftDone>{value}</LeftDone> : <Left>{value}</Left>}
-      <Right>
-        <CheckIcon onClick={() => onCheckBtn(id)}>
-          <FontAwesomeIcon icon={faCheckSquare} />
-        </CheckIcon>
-        <EditIcon onClick={() => onEditBtn(id)}>
-          <FontAwesomeIcon icon={faEdit} />
-        </EditIcon>
-        <DeleteIcon onClick={() => onDeleteBtn(id)}>
-          <FontAwesomeIcon icon={faTrashAlt} />
-        </DeleteIcon>
-      </Right>
-    </Do>
+    <>
+      <Do>
+        {isCheck ? <LeftDone>{value}</LeftDone> : <Left>{value}</Left>}
+        <Right>
+          <CheckIcon onClick={() => onCheckBtn(id)}>
+            <FontAwesomeIcon icon={faCheckSquare} />
+          </CheckIcon>
+          <EditIcon onClick={() => onEditBtn(id)}>
+            <FontAwesomeIcon icon={faEdit} />
+          </EditIcon>
+          <DeleteIcon onClick={() => onDeleteBtn(id)}>
+            <FontAwesomeIcon icon={faTrashAlt} />
+          </DeleteIcon>
+        </Right>
+      </Do>
+      {state.isModal && (
+        <Portal>
+          <ModalComponent />
+        </Portal>
+      )}
+    </>
   );
 };
 
