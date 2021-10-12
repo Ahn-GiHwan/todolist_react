@@ -18,9 +18,11 @@
 - React Hook을 이용하여 개발.
 - contextAPI와 useReducer를 사용하여 state 통합 관리.
 - useRef를 통해 비제어 컴포넌트 구성.
-- useEffect를 이용하여 life cycle 제어.
+- useEffect를 이용하여 focus() or 서버에서 데이터 가져오기 수행.
+- useState를 이용하여 무한 클릭 방지.
 - React.memo를 통해 props를 비교하여 불필요한 랜더링 최소화.
 - Portals를 이용하여 modal 생성.
+- axios로 서버와의 통신.
 
 ### Styled-components
 
@@ -30,7 +32,7 @@
 ### Node.js
 
 - node 환경에서 개발.
-- npm을 통해 react, react-dom, webpack에 필요한 모든 것, sweetalert, reset-css를 다운받아 개발.
+- npm을 통해 react, react-dom, axios, webpack에 필요한 모든 것, sweetalert, reset-css를 다운받아 개발.
 
 ### Webpack
 
@@ -86,3 +88,10 @@
 
 - React.memo를 이용하여 랜더링 최적화.
 - Portals를 이용한 Modal창 생성.
+
+## v3.1.0
+
+- 서버와 통신(https://github.com/Ahn-GiHwan/todolist_express)
+- Skeleton UI로 로딩 중 일때 화면 출력
+- 무한 클릭 방지
+- contextAPI, Modal의 위치를 변경하여 랜더링 최적화

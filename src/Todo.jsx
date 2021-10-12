@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import swal from "sweetalert";
 import {
   Do,
@@ -15,36 +15,54 @@ import {
   faTrashAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import StateContext from "./State";
-import Portal from "./Portal";
-import ModalComponent from "./Modal";
+import axios from "axios";
 
-const Todo = ({ id, value, isCheck }) => {
-  const context = useContext(StateContext);
+const Todo = React.memo(({ id, value, isCheck, dispatch }) => {
+  const [click, setClick] = useState(false);
 
-  const { state, dispatch } = context;
+  const onCheckBtn = async (id) => {
+    setClick(true);
 
-  const onCheckBtn = (id) => {
-    dispatch({ type: "isCheck", id });
+    await axios({
+      method: "patch",
+      url: "https://skytodo-express.herokuapp.com/isCheck",
+      data: { id },
+    }).then((res) => {
+      dispatch({ type: "updateTodos", todos: res.data });
+    });
+
+    setClick(false);
   };
 
-  const onEditBtn = (id) => {
-    dispatch({ type: "isModal" });
-    dispatch({ type: "onSelectId", id });
+  const onModifyBtn = async (id) => {
+    await dispatch({ type: "isModal", id });
   };
 
-  const onDeleteBtn = (id) => {
-    swal({
+  const onDeleteBtn = async (id) => {
+    await swal({
       title: "정말 삭제하시겠습니까?",
       icon: "warning",
       buttons: true,
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        dispatch({ type: "onDelete", id });
-        swal("삭제되었습니다", {
-          icon: "success",
-        });
+        axios({
+          method: "delete",
+          url: "https://skytodo-express.herokuapp.com/delete",
+          data: { id },
+        })
+          .then((res) => {
+            dispatch({ type: "updateTodos", todos: res.data });
+            swal("삭제되었습니다", {
+              icon: "success",
+            });
+          })
+          .catch((e) => {
+            console.log(e);
+            swal("삭제 실패", {
+              icon: "error",
+            });
+          });
       }
     });
   };
@@ -54,10 +72,10 @@ const Todo = ({ id, value, isCheck }) => {
       <Do>
         {isCheck ? <LeftDone>{value}</LeftDone> : <Left>{value}</Left>}
         <Right>
-          <CheckIcon onClick={() => onCheckBtn(id)}>
+          <CheckIcon onClick={() => onCheckBtn(id)} disabled={click}>
             <FontAwesomeIcon icon={faCheckSquare} />
           </CheckIcon>
-          <EditIcon onClick={() => onEditBtn(id)}>
+          <EditIcon onClick={() => onModifyBtn(id)}>
             <FontAwesomeIcon icon={faEdit} />
           </EditIcon>
           <DeleteIcon onClick={() => onDeleteBtn(id)}>
@@ -65,13 +83,8 @@ const Todo = ({ id, value, isCheck }) => {
           </DeleteIcon>
         </Right>
       </Do>
-      {state.isModal && (
-        <Portal>
-          <ModalComponent />
-        </Portal>
-      )}
     </>
   );
-};
+});
 
 export default Todo;

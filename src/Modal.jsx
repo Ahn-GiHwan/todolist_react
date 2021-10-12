@@ -11,6 +11,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import StateContext from "./State";
 import validation from "./validation";
+import axios from "axios";
 
 const ModalComponent = React.memo(() => {
   useEffect(() => {
@@ -22,20 +23,28 @@ const ModalComponent = React.memo(() => {
   const { state, dispatch } = context;
 
   const modifyTodoValue = state.todos.filter(
-    (todo) => todo.id === state.selectId
+    (todo) => todo._id === state.selectId
   )[0].value;
 
   const ref = useRef();
 
   const [value, setValue] = useState(modifyTodoValue);
 
-  const onModifyBtn = () => {
+  const onModifyBtn = async () => {
     const value = ref.current.value;
     if (!validation(value)) {
       swal("빈 문자, 공백(space)는 안됩니다!");
       return;
     }
-    dispatch({ type: "modifyTodo", value });
+
+    await axios({
+      method: "patch",
+      url: "https://skytodo-express.herokuapp.com/modifyTodo",
+      data: { id: state.selectId, value },
+    }).then((res) => {
+      dispatch({ type: "updateTodos", todos: res.data });
+    });
+
     dispatch({ type: "isModal" });
   };
 

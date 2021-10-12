@@ -5,7 +5,8 @@ import { EmptyDoList } from "./style/style";
 import { faGrinAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function EmptyDoListComponent() {
+const EmptyDoListComponent = () => {
+  console.log("empty");
   return (
     <EmptyDoList>
       <span>
@@ -13,6 +14,6 @@ function EmptyDoListComponent() {
       </span>
     </EmptyDoList>
   );
-}
+};
 
 export default EmptyDoListComponent;
