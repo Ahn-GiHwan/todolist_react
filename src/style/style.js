@@ -194,3 +194,33 @@ export const ModifySubmitBtn = styled(BtnSetting)`
   color: white;
   background-color: skyblue;
 `;
+
+// Skeleton
+
+export const Loading = styled.div`
+  height: 49px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #eeeeee;
+  animation: loading 2s infinite linear;
+  @keyframes loading {
+    0% {
+      opacity: 0.4;
+    }
+    20% {
+      opacity: 0.9;
+    }
+    40% {
+      opacity: 0.4;
+    }
+    60% {
+      opacity: 0.9;
+    }
+    80% {
+      opacity: 0.4;
+    }
+    90% {
+      opacity: 0.9;
+    }
+  }
+`;
