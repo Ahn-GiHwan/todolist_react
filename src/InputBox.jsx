@@ -1,12 +1,11 @@
-import React, { useRef, useEffect, useContext } from "react";
-
+import React, { useRef, useEffect, useContext, useState } from "react";
 import { Input, InputDiv, SubmitBtn } from "./style/style";
-
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import swal from "sweetalert";
 import StateContext from "./State";
 import validation from "./validation";
+import axios from "axios";
 
 const InputBox = () => {
   useEffect(() => {
@@ -17,20 +16,30 @@ const InputBox = () => {
 
   const { dispatch } = context;
 
+  const [click, setClick] = useState(false);
+
   const ref = useRef();
 
-  const onSubmitBtn = () => {
+  const onSubmitBtn = async () => {
+    setClick(true);
     if (!validation(ref.current.value)) {
       swal("빈 문자, 공백(space)는 안됩니다!");
       return;
     }
 
-    const value = ref.current.value;
+    await axios({
+      method: "post",
+      url: "https://skytodo-express.herokuapp.com/addTodos",
+      data: {
+        value: ref.current.value,
+      },
+    }).then((res) => {
+      dispatch({ type: "updateTodos", todos: res.data });
+    });
 
-    dispatch({ type: "addTodo", value });
-
-    ref.current.focus();
     ref.current.value = "";
+    ref.current.focus();
+    setClick(false);
   };
 
   return (
@@ -40,7 +49,7 @@ const InputBox = () => {
         ref={ref}
         onKeyPress={(e) => e.key === "Enter" && onSubmitBtn()}
       />
-      <SubmitBtn onClick={onSubmitBtn}>
+      <SubmitBtn onClick={onSubmitBtn} disabled={click}>
         <FontAwesomeIcon icon={faPlus} />
       </SubmitBtn>
     </InputDiv>
