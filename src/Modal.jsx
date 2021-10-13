@@ -22,6 +22,8 @@ const ModalComponent = React.memo(() => {
 
   const { state, dispatch } = context;
 
+  const [click, setClick] = useState(false);
+
   const modifyTodoValue = state.todos.filter(
     (todo) => todo._id === state.selectId
   )[0].value;
@@ -32,6 +34,9 @@ const ModalComponent = React.memo(() => {
 
   const onModifyBtn = async () => {
     const value = ref.current.value;
+
+    setClick(true);
+    ref.current.blur();
     if (!validation(value)) {
       swal("빈 문자, 공백(space)는 안됩니다!");
       return;
@@ -45,6 +50,7 @@ const ModalComponent = React.memo(() => {
       dispatch({ type: "updateTodos", todos: res.data });
     });
 
+    setClick(false);
     dispatch({ type: "isModal" });
   };
 
@@ -64,7 +70,7 @@ const ModalComponent = React.memo(() => {
           onKeyPress={(e) => e.key === "Enter" && onModifyBtn()}
           placeholder={modifyTodoValue}
         />
-        <ModifySubmitBtn br="3px" onClick={onModifyBtn}>
+        <ModifySubmitBtn br="3px" onClick={onModifyBtn} disabled={click}>
           수정하기
         </ModifySubmitBtn>
         <ExitBtn br="0 10px 0 0" onClick={onExitBtn}>
