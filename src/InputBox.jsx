@@ -23,6 +23,7 @@ const InputBox = () => {
 
   const onSubmitBtn = async () => {
     setClick(true);
+    ref.current.blur();
     if (!validation(ref.current.value)) {
       swal("빈 문자, 공백(space)는 안됩니다!");
       return;
