@@ -120,6 +120,8 @@ export const Do = styled.li`
 
 export const Left = styled.span`
   flex: 9;
+  margin-right: 10px;
+  line-height: normal;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
