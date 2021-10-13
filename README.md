@@ -28,6 +28,7 @@
 
 - CSS in JS로 JS안에 CSS를 작성할 수 있는 라이브러리.
 - props를 받아 지정 값을 설정할 수 있음.
+- responsive web을 위해 todo가 넘치면 '...'으로 표시.
 
 ### Node.js
 
@@ -91,7 +92,12 @@
 
 ## v3.1.0
 
-- 서버와 통신(https://github.com/Ahn-GiHwan/todolist_express)
-- Skeleton UI로 로딩 중 일때 화면 출력
-- 무한 클릭 방지
-- contextAPI, Modal의 위치를 변경하여 랜더링 최적화
+- 서버와 통신(https://github.com/Ahn-GiHwan/todolist_express).
+- Skeleton UI로 로딩 중 일때 화면 출력.
+- 무한 클릭 방지.
+- contextAPI, Modal의 위치를 변경하여 랜더링 최적화.
+
+## v3.2.0
+
+- responsive web (todo가 넘치면 '...'으로 표시).
+- 10초마다 todos 업데이트 가능하게 함.

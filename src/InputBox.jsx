@@ -6,6 +6,7 @@ import swal from "sweetalert";
 import StateContext from "./State";
 import validation from "./validation";
 import axios from "axios";
+import TodosUpdate from "./TodosUpdate";
 
 const InputBox = () => {
   useEffect(() => {
@@ -43,16 +44,19 @@ const InputBox = () => {
   };
 
   return (
-    <InputDiv>
-      <Input
-        placeholder="리액트 공부하기"
-        ref={ref}
-        onKeyPress={(e) => e.key === "Enter" && onSubmitBtn()}
-      />
-      <SubmitBtn onClick={onSubmitBtn} disabled={click}>
-        <FontAwesomeIcon icon={faPlus} />
-      </SubmitBtn>
-    </InputDiv>
+    <>
+      <InputDiv>
+        <Input
+          placeholder="리액트 공부하기"
+          ref={ref}
+          onKeyPress={(e) => e.key === "Enter" && onSubmitBtn()}
+        />
+        <SubmitBtn onClick={onSubmitBtn} disabled={click}>
+          <FontAwesomeIcon icon={faPlus} />
+        </SubmitBtn>
+      </InputDiv>
+      <TodosUpdate />
+    </>
   );
 };
 
