@@ -74,7 +74,7 @@ export const Title = styled.h1`
 
 export const InputDiv = styled.div`
   padding-bottom: 5px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   border-bottom: 2px solid white;
 `;
 
@@ -158,6 +158,25 @@ export const DeleteIcon = styled(BtnSetting)`
   padding: 5px 7px;
   border-radius: 0 5px 5px 0;
   background-color: red;
+`;
+
+// TodosUpdate
+
+export const UpdateBox = styled.div`
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  margin-bottom: 15px;
+  font-size: 12px;
+  /* background-color: red; */
+`;
+
+export const UpdateContent = styled.span`
+  vertical-align: text-top;
+`;
+
+export const Check = styled.input.attrs({ type: "checkbox" })`
+  background-color: blue;
 `;
 
 // Modal
