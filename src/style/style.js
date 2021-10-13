@@ -44,6 +44,7 @@ export const Container = styled(FlexSetting)`
 // Main
 export const Main = styled(FlexSetting)`
   width: fit-content;
+  max-width: 80%;
   height: 80%;
   padding: 20px;
   border-radius: 10px;
@@ -73,7 +74,7 @@ export const Title = styled.h1`
 
 export const InputDiv = styled.div`
   padding-bottom: 5px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   border-bottom: 2px solid white;
 `;
 
@@ -117,13 +118,22 @@ export const Do = styled.li`
   }
 `;
 
-export const Left = styled.div``;
+export const Left = styled.span`
+  flex: 9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
 
-export const LeftDone = styled.div`
+export const LeftDone = styled(Left)`
   text-decoration: line-through;
 `;
 
 export const Right = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 84px;
   border: 2px solid black;
   border-radius: 10px;
   overflow: hidden;
@@ -148,6 +158,25 @@ export const DeleteIcon = styled(BtnSetting)`
   padding: 5px 7px;
   border-radius: 0 5px 5px 0;
   background-color: red;
+`;
+
+// TodosUpdate
+
+export const UpdateBox = styled.div`
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  margin-bottom: 15px;
+  font-size: 12px;
+  /* background-color: red; */
+`;
+
+export const UpdateContent = styled.span`
+  vertical-align: text-top;
+`;
+
+export const Check = styled.input.attrs({ type: "checkbox" })`
+  background-color: blue;
 `;
 
 // Modal
