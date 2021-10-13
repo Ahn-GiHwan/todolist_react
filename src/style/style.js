@@ -44,6 +44,7 @@ export const Container = styled(FlexSetting)`
 // Main
 export const Main = styled(FlexSetting)`
   width: fit-content;
+  max-width: 80%;
   height: 80%;
   padding: 20px;
   border-radius: 10px;
@@ -117,13 +118,22 @@ export const Do = styled.li`
   }
 `;
 
-export const Left = styled.div``;
+export const Left = styled.span`
+  flex: 9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
 
-export const LeftDone = styled.div`
+export const LeftDone = styled(Left)`
   text-decoration: line-through;
 `;
 
 export const Right = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 84px;
   border: 2px solid black;
   border-radius: 10px;
   overflow: hidden;
