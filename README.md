@@ -97,7 +97,7 @@
 - 무한 클릭 방지.
 - contextAPI, Modal의 위치를 변경하여 랜더링 최적화.
 
-## v3.1.1
+## v3.2.0
 
 - responsive web (todo가 넘치면 '...'으로 표시).
 - 10초마다 todos 업데이트 가능하게 함.
