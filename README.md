@@ -10,6 +10,7 @@
 <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=Node.js&logoColor=white"/></a> &nbsp
 <img src="https://img.shields.io/badge/Webpack-8DD6F9?style=flat-square&logo=webpack&logoColor=white"/></a> &nbsp
 <img src="https://img.shields.io/badge/Babel-F9DC3E?style=flat-square&logo=Babel&logoColor=white"/></a> &nbsp
+<img src="https://img.shields.io/badge/Git_flow-F05032?style=flat-square&logo=Git&logoColor=white"/></a> &nbsp
 <img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat-square&logo=Netlify&logoColor=white"/></a> &nbsp
 <hr>
 
@@ -48,6 +49,10 @@
 
 - ES6^의 문법을 ES5이하의 문법으로 변환하여 모든 브라우저에서 동작할 수 있게 함.
 - React JSX문법을 컴퓨터가 읽을 수 있는 코드로 변환.
+
+### Git-flow
+
+- git-flow를 통한 브랜치 관리
 
 ### Netlify
 
