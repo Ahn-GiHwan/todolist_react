@@ -1,6 +1,6 @@
 import React from "react";
 
-import { EmptyDoList } from "./style/style";
+import { EmptyDoList } from "../style/style";
 
 import { faGrinAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

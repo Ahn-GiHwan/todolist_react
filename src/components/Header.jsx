@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, ListIcon, Title } from "./style/style.js";
+import { Header, ListIcon, Title } from "../style/style";
 import { faThList } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
