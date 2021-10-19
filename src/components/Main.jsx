@@ -1,9 +1,9 @@
 import React, { useReducer } from "react";
-import { Main } from "./style/style.js";
+import { Main } from "../style/style";
 import Header from "./Header";
 import InputBox from "./InputBox.jsx";
 import DoList from "./DoList.jsx";
-import StateContext, { initState, reducer } from "./State";
+import StateContext, { initState, reducer } from "../State";
 
 const MainComponent = React.memo(() => {
   const [state, dispatch] = useReducer(reducer, initState);
