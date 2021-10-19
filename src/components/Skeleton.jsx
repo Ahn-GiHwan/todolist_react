@@ -1,5 +1,5 @@
 import React from "react";
-import { DoList, Loading } from "./style/style";
+import { DoList, Loading } from "../style/style";
 
 const Skeleton = () => {
   return (

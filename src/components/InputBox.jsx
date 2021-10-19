@@ -1,10 +1,10 @@
 import React, { useRef, useEffect, useContext, useState } from "react";
-import { Input, InputDiv, SubmitBtn } from "./style/style";
+import { Input, InputDiv, SubmitBtn } from "../style/style";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import swal from "sweetalert";
-import StateContext from "./State";
-import validation from "./validation";
+import StateContext from "../State";
+import validation from "../function/validation";
 import axios from "axios";
 import TodosUpdate from "./TodosUpdate";
 

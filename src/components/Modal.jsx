@@ -6,11 +6,11 @@ import {
   ModalTitle,
   ModifyInput,
   ModifySubmitBtn,
-} from "./style/style";
+} from "../style/style";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import StateContext from "./State";
-import validation from "./validation";
+import StateContext from "../State";
+import validation from "../function/validation";
 import axios from "axios";
 
 const ModalComponent = React.memo(() => {

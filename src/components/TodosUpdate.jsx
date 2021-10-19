@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import StateContext from "./State";
-import { Check, UpdateBox, UpdateContent } from "./style/style";
+import StateContext from "../State";
+import { Check, UpdateBox, UpdateContent } from "../style/style";
 
 const TodosUpdate = React.memo(() => {
   const context = useContext(StateContext);

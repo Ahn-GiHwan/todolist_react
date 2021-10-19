@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 import "reset-css/sass/_reset.scss";
 
-import Container from "./Container";
+import Container from "./components/Container";
 
 const root = document.getElementById("root");
 

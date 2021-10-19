@@ -8,7 +8,7 @@ import {
   CheckIcon,
   EditIcon,
   DeleteIcon,
-} from "./style/style";
+} from "../style/style";
 import {
   faCheckSquare,
   faEdit,
