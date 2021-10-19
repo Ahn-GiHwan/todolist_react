@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useContext, useEffect } from "react";
 import EmptyDoList from "./EmptyDoList";
-import StateContext from "./State";
-import { DoList, Input } from "./style/style";
+import StateContext from "../State";
+import { DoList } from "../style/style";
 import Todo from "./Todo";
-import Portal from "./Portal";
+import Portal from "../Portal";
 import ModalComponent from "./Modal";
 import Skeleton from "./Skeleton";
 
