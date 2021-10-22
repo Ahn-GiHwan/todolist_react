@@ -72,15 +72,9 @@
 <br>
 <hr>
 
-## VanillaJS version
+## Express (server)
 
-> https://github.com/Ahn-GiHwan/todolist
-
-<br>
-
-## TypeScript version
-
-> https://github.com/Ahn-GiHwan/todolist_ts
+> https://github.com/Ahn-GiHwan/todolist_express
 
 <br>
 <hr>
